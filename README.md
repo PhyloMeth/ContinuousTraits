@@ -1,0 +1,1 @@
+This has two files: one for the functions you'll be using, and one for the scripts to handle the loading and processing of specific files. Add your own code to each of them.
