@@ -13,3 +13,7 @@ CleanData <- function(phy, data) {
 	#treedata() in Geiger is probably my favorite function in R.
 }
 
+RunSingleOUwieModel<-function(model, phy, data) {
+	print(paste("Now starting model",model))
+	return(OUwie(phy, data, model, simmap.tree=FALSE, diagn=FALSE))	
+}

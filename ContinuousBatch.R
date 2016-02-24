@@ -13,5 +13,22 @@ VisualizeData(tree, cleaned.discrete)
 
 BM1 <- fitContinuous(tree, cleaned.continuous, model="BM")
 print(paste("The rate of evolution is", _____, "in units of", _______))
-#Important: What are the rates of evolution?
+#Important: What are the rates of evolution? In what units?
+
+
+
+
+#OUwie runs:
+#This takes longer than you may be used to. 
+#We're a bit obsessive about doing multiple starts and in general
+#performing a thorough numerical search. It took you 3+ years
+#to get the data, may as well take an extra five minutes to 
+#get an accurate answer
+nodeBased.OUMV <- OUwie(tree,trait,model="OUMV", simmap.tree=FALSE, diagn=FALSE)
+print(nodeBased.OUMV)
+#What do the numbers mean?
+
+#Now run all OUwie models:
+models <- c("BM1","BMS","OU1","OUM","OUMV","OUMA","OUMVA")
+results <- lapply(models, RunSingleOUwieModel, phy=tree, data=trait)
 
