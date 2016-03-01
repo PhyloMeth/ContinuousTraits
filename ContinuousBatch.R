@@ -14,7 +14,18 @@ VisualizeData(tree, cleaned.discrete)
 BM1 <- fitContinuous(tree, cleaned.continuous, model="BM")
 print(paste("The rate of evolution is", _____, "in units of", _______))
 #Important: What are the rates of evolution? In what units?
+OU1 <- fitContinuous(tree, cleaned.continuous, model="OU")
+par(mfcol(c(1,2)))
+plot(tree, show.tip.label=FALSE)
+ou.tree <- rescale(tree, model="OU", ___alpha____)
+plot(ou.tree)
+#How are the trees different?
 
+#Compare trees
+AIC.BM1 <- ________FIGURE_OUT_HOW_TO_DO_THIS_____
+AIC.OU1 <- ________FIGURE_OUT_HOW_TO_DO_THIS_____
+delta.AIC.BM1 <- ________FIGURE_OUT_HOW_TO_DO_THIS_____
+delta.AIC.OU1 <- ________FIGURE_OUT_HOW_TO_DO_THIS_____
 
 
 
@@ -24,7 +35,7 @@ print(paste("The rate of evolution is", _____, "in units of", _______))
 #performing a thorough numerical search. It took you 3+ years
 #to get the data, may as well take an extra five minutes to 
 #get an accurate answer
-nodeBased.OUMV <- OUwie(tree,trait,model="OUMV", simmap.tree=FALSE, diagn=FALSE)
+nodeBased.OUMV <- OUwie(tree, cleaned.continuous,model="OUMV", simmap.tree=FALSE, diagn=FALSE)
 print(nodeBased.OUMV)
 #What do the numbers mean?
 
